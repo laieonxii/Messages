@@ -18,7 +18,7 @@ const favicon = [
 if (users) {
   readerCon.style.display = "none";
   head.firstElementChild.innerHTML = `Hi, ${users}!`;
-  document.head.children[4].href = `/images/${favicon[userID]}.jpg`;
+  document.head.children[4].href = `images/${favicon[userID]}.jpg`;
   document.title = users;
   logo.src = `images/${logoCollections[userID]}Logo.jpg`;
   transparent.src = `images/${transparentCollections[userID]}.jpg`;
