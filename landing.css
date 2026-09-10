@@ -46,7 +46,7 @@
 #waiting{
   height: 100%;
   width: 100%;
-  display: flex;
+  display: none;
   justify-content: center;
   align-items: center;
   flex-direction: column;
@@ -60,7 +60,7 @@
 #proceed{
   height: 100%;
   width: 100%;
-  display: none;
+  display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
