@@ -1,0 +1,279 @@
+:root{
+  --boxBg: linear-gradient(135deg, 
+  rgba(255, 230, 163, 1) 0%, 
+  rgba(247, 211, 88, 1) 40%, 
+  rgba(212, 175, 55, 1) 70%, 
+  rgba(163, 126, 24, 1) 100%);
+  --goldBlur: linear-gradient(135deg, 
+  rgba(255, 230, 163, .5) 0%, 
+  rgba(247, 211, 88, .5) 40%, 
+  rgba(212, 175, 55, .5) 70%, 
+  rgba(163, 126, 24, .5) 100%);
+  --radius: 5px;
+  --shadowText: 0 0 5px gray;
+  --shadowBox: 0 0 8px black;
+}
+
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: cursive, sans-serif;
+  color: #6A3800;
+}
+
+body{
+  overflow: hidden;
+}
+
+#desktop{
+  display: none;
+}
+
+#main{
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+}
+
+#bg{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: -1;
+}
+
+#content{
+  height: 100%;
+  width: 100%;
+}
+
+#artContainer{
+  position: absolute;
+  width: 100%;
+  height: 77%;
+  padding: 50px 10px 0 10px;
+  display: flex;
+  justify-content: space-between;
+  z-index: -1;
+}
+
+.columns{
+  width: 23%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.arts{
+  width: 100%;
+  border-radius: 5px;
+  border: solid 1px ghostwhite;
+  padding: 3px;
+  box-shadow: var(--shadowBox);
+}
+
+#centerContents{
+  height: 100%;
+  display: grid;
+  place-items: center;
+}
+
+#head{
+  position: absolute;
+  top: 60px;
+  text-align: center;
+  line-height: 35px;
+  z-index: -1;
+  text-shadow: var(--shadowText);
+  font-size: 2vh;
+}
+
+#head p{
+  font-size: 9px;
+  font-weight: 1000;
+}
+
+#footer{
+  width: 45vw;
+  position: absolute;
+  bottom: 18vh;
+  font-size: 2vh;
+  text-shadow: var(--shadowText);
+  text-align: center;
+  z-index: -1;
+}
+
+#footer h5{
+  font-weight: 1000;
+}
+
+.border{
+  height: 500px;
+  width: 200px;
+  background-position: center; 
+  background-size: cover;
+}
+
+#messageBox{
+  height: 200px;
+  width: 150px;
+  position: relative;
+  transition: 0.5s ease-out;
+}
+
+.box{
+  height: 100%;
+  width: 100%;
+  background: var(--boxBg);
+  border-radius: var(--radius);
+  box-shadow: 0 0 5px gray;
+  border: solid 0.5px #6A3800;
+  display: grid;
+  place-items: center;
+}
+
+#msgPaper{
+  width: 100%;
+  position: absolute;
+  display: grid;
+  place-items: center;
+  transition: 1s ease-in-out;
+  background: rgba(0, 0, 0, 0);
+  backdrop-filter: blur(0);
+}
+
+#msgPaper div{
+  position: absolute;
+  width: 60%;
+  height: 0;
+  border-radius: 5px;
+  font-size: 4vw;
+  text-align: center;
+  font-weight: 1000;
+  padding: 0 0;
+  opacity: 1;
+  word-break: break-word;
+  transition: 1s ease-in-out;
+}
+
+#msgPaper #vintagePaper{
+  width: 100%;
+}
+
+span{
+  display: block;
+  text-indent: 40px;
+}
+
+span:nth-child(1){
+  display: block;
+  text-indent: 0;
+}
+
+#msgPaper div img{
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  border-radius: 5px;
+}
+
+/*.box::before{
+  content: "Happy Birthday Name!";
+  font-size: 1.3em;
+  text-align: center;
+  text-shadow: 0 0 5px #6A3800;
+  padding: 15px 0;
+  inset: 0;
+  background: var(--boxBg);
+  position: absolute;
+  border: solid 0.5px #6A3800;
+  border-radius: var(--radius);
+  z-index: 1;
+}*/
+
+#notRevealMsg{
+  height: 100%;
+  width: 100%;
+  background: var(--goldBlur);
+  backdrop-filter: blur(10px);
+  border-radius: var(--radius);
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 5px;
+  text-shadow: var(--shadowText);
+  font-size: 1.1em;
+  transition: 3s ease-out;
+  position: relative;
+  bottom: 0;
+  box-shadow: var(--shadowBox);
+  font-weight: 700;
+}
+
+#notRevealMsg p{
+  width: 100%;
+  text-align: center;
+  transition: 0.5s ease-out;
+}
+
+#notRevealMsg p:nth-child(3) {
+  animation: blink 0.7s ease-in-out infinite alternate;
+}
+
+@keyframes blink {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+#ribbon{
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translate(0,-50%);
+  transition: 5s ease-out;
+  z-index: 2;
+}
+
+@media only screen and (min-width: 920px) {
+  *{
+    font-family: arial, sans-serif;
+  }
+  
+  #desktop{
+    height: 100vh;
+    width: 100%;
+    display: grid;
+    place-items: center;
+    font-size: 1vh;
+    text-align: center;
+    padding: 5%;
+  }
+  
+  #desktop h1{
+    color: #000;
+  }
+  
+  #main{
+    display: none;
+  }
+}
+
+@media only screen and (min-height: 851px) {
+  #head{
+    line-height: 60px;
+  }
+  
+  #head p{
+    font-size: 1vh;
+  }
+}
+
+

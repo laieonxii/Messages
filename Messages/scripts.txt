@@ -1,0 +1,16 @@
+/*
+cards.forEach((el, ind) => {
+  const cards = `card${i}`;
+  if (localStorage.getItem(cards) === "0") {
+    el.style.display = "none";
+    return;
+  };
+  
+  el.addEventListener("click", () => {
+    window.alert(members[ind]);
+    el.style.opacity = "0.5";
+    //-----
+    localStorage.setItem(cards, "0");
+  }, { once: true });
+});
+*/
